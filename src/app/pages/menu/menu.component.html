@@ -1,0 +1,12 @@
+<div class="sidebar-menu-wrapper">
+  <app-sidebar></app-sidebar>
+  <div class="menu-view">
+    <div class="tab-view">
+      <a [ngClass]="selected === 'category' ? 'active' : ''" (click)="loadCategory()">Manage Categories</a>
+      <a [ngClass]="selected === 'items' ? 'active' : ''" (click)="loadItems()">Items</a>
+    </div>
+    <div class="cards">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

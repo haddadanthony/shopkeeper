@@ -1,0 +1,13 @@
+<div class="card">
+  <header>{{ itemEl.name }}</header>
+  <h3>Ingredients</h3>
+  <ul>
+    <li *ngFor="let ingredient of itemEl.ingredients" class="ingredient">
+      {{ ingredient }}
+    </li>
+  </ul>
+  <div>
+    <i class="fa fa-trash"></i>
+    <i class="fa fa-edit"></i>
+  </div>
+</div>

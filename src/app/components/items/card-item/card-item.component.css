@@ -1,0 +1,52 @@
+.card {
+  width: 200px;
+  height: fit-content;
+  padding: 15px;
+  background: #ae84d9;
+  margin-bottom: 30px;
+  border-radius: 7px;
+  box-shadow: 4px 4px 7px #5f5f5f;
+  transition: .1s all linear;
+}
+
+.card:hover {
+  box-shadow: none;
+  transition: .1s all linear;
+}
+
+ul {
+  list-style: none;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+li {
+  padding: 5px;
+  color: #4a4a4a;
+  text-transform: capitalize;
+}
+
+header {
+  padding: 5px;
+  font-size: 1.2em;
+  background: #eee;
+  text-align: center; 
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.card div:last-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa {
+  font-size: 1.4em;
+}
+
+.fa:hover {
+  cursor: pointer;
+  color: #fff;
+}

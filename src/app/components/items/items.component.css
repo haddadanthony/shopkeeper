@@ -1,0 +1,7 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
+  padding: 30px;
+  grid-template-rows: auto;
+  justify-content: center;
+}
