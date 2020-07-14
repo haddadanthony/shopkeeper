@@ -6,6 +6,8 @@ import { CustomersComponent } from './pages/customers/customers.component';
 import { ItemsComponent } from './components/items/items.component';
 import { ManageCategoriesComponent } from './components/manage-categories/manage-categories.component';
 import { EditCategoryComponent } from './components/manage-categories/edit-category/edit-category.component';
+import { CategoryComponent } from './components/manage-categories/category/category.component';
+import { AddCategoryComponent } from './components/manage-categories/add-category/add-category.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -17,7 +19,11 @@ const routes: Routes = [
       {
         path: 'categories',
         component: ManageCategoriesComponent,
-        children: [{ path: 'edit', component: EditCategoryComponent }],
+        children: [
+          {path: 'add', component: AddCategoryComponent},
+          {path: ':id/edit', component: EditCategoryComponent},
+          {path: ':id', component: CategoryComponent},
+        ]
       },
     ],
   },

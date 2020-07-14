@@ -1,5 +1,6 @@
 <div class="card">
   <header>{{ itemEl.name }}</header>
+  <p>{{itemEl.price | number}} LBP</p>
   <h3>Ingredients</h3>
   <ul>
     <li *ngFor="let ingredient of itemEl.ingredients" class="ingredient">

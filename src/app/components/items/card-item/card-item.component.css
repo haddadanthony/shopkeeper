@@ -50,3 +50,17 @@ header {
   cursor: pointer;
   color: #fff;
 }
+
+p {
+  width: fit-content;
+  opacity: 0;
+  transition: .1s all;
+  padding: 5px 0;
+  font-weight: bold;
+  color: #fff;
+}
+
+.card:hover p {
+  opacity: 1;
+  transition: .1s all;
+}

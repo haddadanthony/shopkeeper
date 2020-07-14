@@ -20,8 +20,8 @@ export class ManageCategoriesComponent implements OnInit {
     this.categories = this.ctgService.getCategories();
   }
 
-  editCategory(id: number) {
+  loadCategory(id: number) {
     this.category = this.ctgService.getCategory(id);
-    this.router.navigate(['edit'], {relativeTo: this.route});
+    this.router.navigate(['category', this.category.id], {relativeTo: this.route, queryParamsHandling: 'preserve'});
   }
 }

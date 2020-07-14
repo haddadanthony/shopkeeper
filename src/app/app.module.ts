@@ -16,6 +16,8 @@ import { ItemsComponent } from './components/items/items.component';
 import { ManageCategoriesComponent } from './components/manage-categories/manage-categories.component';
 import { CategoriesService } from './services/categories.service';
 import { EditCategoryComponent } from './components/manage-categories/edit-category/edit-category.component';
+import { CategoryComponent } from './components/manage-categories/category/category.component';
+import { AddCategoryComponent } from './components/manage-categories/add-category/add-category.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { EditCategoryComponent } from './components/manage-categories/edit-categ
     ItemsComponent,
     ManageCategoriesComponent,
     EditCategoryComponent,
+    CategoryComponent,
+    AddCategoryComponent,
   ],
   imports: [
     BrowserModule,

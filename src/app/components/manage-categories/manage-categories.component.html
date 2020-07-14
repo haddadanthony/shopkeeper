@@ -3,13 +3,16 @@
     <table>
       <tr>
         <th>Category Name</th>
-        <th>Delete</th>
-        <th>Edit</th>
+        <!-- <th>Delete</th>
+        <th>Edit</th> -->
       </tr>
-      <tr *ngFor="let category of categories">
-        <td>{{category.name}}</td>
-        <td><i class="fa fa-trash"></i></td>
-        <td><i class="fa fa-edit" (click)="editCategory(category.id)"></i></td>
+      <tr
+        [routerLink]="[category.id]"
+        *ngFor="let category of categories"
+      >
+        <td>{{ category.name }}</td>
+        <!-- <td><i class="fa fa-trash"></i></td>
+        <td><i class="fa fa-edit" (click)="editCategory(category.id)"></i></td> -->
       </tr>
     </table>
   </div>
