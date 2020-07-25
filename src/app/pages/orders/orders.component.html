@@ -1,1 +1,63 @@
-<p>orders works!</p>
+<div class="wrapper">
+  <div class="menu-navigation">
+    <a
+      [ngClass]="
+        categoryName === category.name ? 'category active' : 'category'
+      "
+      *ngFor="let category of categories"
+      (click)="onLoadCategory($event, category.name)"
+      >{{ category.name }}</a
+    >
+  </div>
+  <div class="menu">
+    <div (click)="onAddToCart(item)" *ngFor="let item of items">
+      <p class="item" *ngIf="categoryName === item.category">{{ item.name }}</p>
+    </div>
+  </div>
+  <div class="cart">
+    <h3>Cart</h3>
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Qty</th>
+      </tr>
+      <tr *ngFor="let cartItem of cart">
+        <td>{{ cartItem.name }}</td>
+        <td>{{ cartItem.price | number }}</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td colspan="2">{{ (total ? total : 0) | number }} LBP</td>
+      </tr>
+    </table>
+  </div>
+  <div class="container customer">
+    <h5>Customer</h5>
+    <input
+      type="text"
+      class="form-control w-50"
+      name="search-customer"
+      id="search-customer"
+      placeholder="Customer number..."
+      #customerMobile
+    />
+    <a
+      (click)="onSearchCustomer(customerMobile)"
+      class="btn btn-outline-secondary mt-2"
+      >Search</a
+    >
+  </div>
+</div>
+<div *ngIf="searchCustomerResult.length" class="customer-search-modal">
+  <h3 class="text-light">Customers</h3>
+  <ul class="list-group">
+    <div *ngFor="let customer of searchCustomerResult" class="d-flex justify-content-between align-items-center list-group-item">
+      <li style="list-style: none;">
+        {{ customer.name }}
+      </li>
+      <a href="#" class="btn btn-outline-secondary btn-sm">Attach</a>
+    </div>
+  </ul>
+</div>

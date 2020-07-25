@@ -17,7 +17,7 @@ export class EditCategoryComponent implements OnInit {
         const id = +params.id;
         this.categoryEl = this.ctgService.getCategory(id);
       }
-    )
+    );
   }
 
   onEditCategory(e: Event, input: HTMLInputElement) {

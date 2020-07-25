@@ -8,6 +8,7 @@ import { ManageCategoriesComponent } from './components/manage-categories/manage
 import { EditCategoryComponent } from './components/manage-categories/edit-category/edit-category.component';
 import { CategoryComponent } from './components/manage-categories/category/category.component';
 import { AddCategoryComponent } from './components/manage-categories/add-category/add-category.component';
+import { OrdersComponent } from './pages/orders/orders.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -20,14 +21,15 @@ const routes: Routes = [
         path: 'categories',
         component: ManageCategoriesComponent,
         children: [
-          {path: 'add', component: AddCategoryComponent},
-          {path: ':id/edit', component: EditCategoryComponent},
-          {path: ':id', component: CategoryComponent},
-        ]
+          { path: 'add', component: AddCategoryComponent },
+          { path: ':id/edit', component: EditCategoryComponent },
+          { path: ':id', component: CategoryComponent },
+        ],
       },
     ],
   },
   { path: 'customers', component: CustomersComponent },
+  { path: 'orders', component: OrdersComponent },
 ];
 
 @NgModule({

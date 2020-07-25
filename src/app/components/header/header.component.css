@@ -29,3 +29,8 @@ a:hover {
     color: #fff;
     transition: .2s linear all;
 }
+
+.active {
+    background: #B63BD9;
+    color: #fff;
+}

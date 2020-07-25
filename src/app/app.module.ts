@@ -18,6 +18,7 @@ import { CategoriesService } from './services/categories.service';
 import { EditCategoryComponent } from './components/manage-categories/edit-category/edit-category.component';
 import { CategoryComponent } from './components/manage-categories/category/category.component';
 import { AddCategoryComponent } from './components/manage-categories/add-category/add-category.component';
+import { CustomersService } from './services/customers.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { AddCategoryComponent } from './components/manage-categories/add-categor
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ItemsService, CategoriesService],
+  providers: [ItemsService, CategoriesService, CustomersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

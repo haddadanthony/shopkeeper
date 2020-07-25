@@ -24,8 +24,8 @@ export class CategoriesService {
   addCategory(name: string) {
     const category = {
       id: Math.random(),
-      name: name
-    }
+      name,
+    };
     this.categories.push(category);
   }
 }
