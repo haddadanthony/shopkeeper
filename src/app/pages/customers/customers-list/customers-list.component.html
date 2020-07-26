@@ -1,0 +1,12 @@
+<table class="table table-hover">
+  <thead>
+    <th>Name</th>
+    <th>Last Name</th>
+    <th>Phone Number</th>
+  </thead>
+  <tr (click)="showCustomer(customer.id)" *ngFor="let customer of customers">
+    <td>{{ customer.name }}</td>
+    <td>{{ customer.lastname }}</td>
+    <td>{{ customer.mobile }}</td>
+  </tr>
+</table>

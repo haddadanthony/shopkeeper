@@ -12,11 +12,28 @@ export class CustomersService {
     return this.customers;
   }
 
+  getCustomer(customersList: Customer[], id: number) {
+    const customer = customersList.find(c => c.id === id);
+    return customer;
+  }
+
   searchCustomer(mobile: string, customers: Customer[], result: Customer[]) {
     customers.forEach((customer) => {
       if (customer.mobile.includes(mobile)) {
         result.push(customer);
       }
     });
+  }
+
+  changeStatusToRegular(customer: Customer) {
+    customer.isRegular = true;
+  }
+
+  addCustomer(customer: Customer, customers: Customer[]) {
+    customers.push(customer);
+  }
+
+  deleteCustomer(id: number) {
+    this.customers = this.customers.filter(customer => customer.id !== id);
   }
 }

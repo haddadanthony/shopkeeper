@@ -15,6 +15,10 @@ export class ItemsService {
   }
 
   addToCart(cart: Item[], item: Item) {
+    if (cart.includes(item)) {
+      cart[cart.indexOf(item)].quantity++;
+      return;
+    }
     cart.push(item);
   }
 

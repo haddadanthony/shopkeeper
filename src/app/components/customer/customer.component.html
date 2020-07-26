@@ -1,0 +1,34 @@
+<button class="btn btn-link mt-1" routerLink="/customers">
+  « back to customers
+</button>
+<div class="container text-align-center p-3">
+  <div class="card w-75 m-auto">
+    <div class="card-body">
+      <h4 class="card-title" style="font-weight: bold;">
+        {{ customer.name }} {{ customer.lastname }}
+      </h4>
+      <p class="card-text">
+        <b>Mobile: </b>
+        <span style="color: #bbb; font-style: italic;">{{
+          customer.mobile
+        }}</span>
+      </p>
+      <p>
+        <b>Status: </b
+        ><span
+          [ngClass]="customer.isRegular ? 'text-success' : 'text-danger'"
+          >{{ customer.isRegular ? "Regular" : "Sleeping 😴" }}</span
+        >
+      </p>
+      <a href="#" (click)="deleteCustomer($event)" class="card-link">Delete</a>
+      <a href="#" (click)="loadEdit($event)" class="card-link">Edit</a>
+      <a
+        href="#"
+        (click)="changeToRegular($event)"
+        *ngIf="!customer.isRegular"
+        class="card-link"
+        >Set Regular</a
+      >
+    </div>
+  </div>
+</div>

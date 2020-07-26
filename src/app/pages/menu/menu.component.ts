@@ -10,6 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
   items: Item[];
+  filteredItems: Item[];
   selected = 'items';
 
   constructor(
@@ -30,5 +31,11 @@ export class MenuComponent implements OnInit {
   loadItems() {
     this.selected = 'items';
     this.router.navigate(['items'], {relativeTo: this.route});
+  }
+
+  filterCategories(category: string) {
+    console.log(category);
+    this.filteredItems = this.items.filter(item => item.category === category);
+    console.log(this.filteredItems);
   }
 }

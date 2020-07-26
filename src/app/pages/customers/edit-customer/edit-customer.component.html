@@ -1,0 +1,36 @@
+<div class="container p-5 w-75 m-auto">
+  <form (submit)="editCustomer($event, name, lastName, mobile)">
+    <div class="form-group">
+      <label class="font-weight-bold" for="email">Fisrt Name:</label>
+      <input
+        type="text"
+        class="form-control"
+        [value]="oldData.name"
+        id="first-name"
+        #name
+      />
+    </div>
+    <div class="form-group">
+      <label class="font-weight-bold" for="last-name">Last Name:</label>
+      <input
+        #lastName
+        type="text"
+        class="form-control"
+        [value]="oldData.lastname"
+        id="last-name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="phone-number" class="font-weight-bold">Phone Number</label>
+      <input
+        #mobile
+        class="form-control"
+        type="text"
+        id="phone-number"
+        [value]="oldData.mobile"
+      />
+    </div>
+    <button type="submit" class="btn btn-outline-success">Save</button>
+  </form>
+</div>
+

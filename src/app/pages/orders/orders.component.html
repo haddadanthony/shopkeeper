@@ -1,3 +1,5 @@
+<p *ngIf="orderPlaced && attachedCustomer" class="alert alert-success w-100">Order placed successfully!</p>
+<p *ngIf="orderPlaced && !attachedCustomer" class="alert alert-danger w-100">Please assign the order to a customer before proceeding</p>
 <div class="wrapper">
   <div class="menu-navigation">
     <a
@@ -18,14 +20,14 @@
     <h3>Cart</h3>
     <table>
       <tr>
-        <th>Item</th>
-        <th>Price</th>
-        <th>Qty</th>
+        <th class="text-light">Item</th>
+        <th class="text-light">Price</th>
+        <th class="text-light">Qty</th>
       </tr>
       <tr *ngFor="let cartItem of cart">
         <td>{{ cartItem.name }}</td>
         <td>{{ cartItem.price | number }}</td>
-        <td>1</td>
+        <td>{{ cartItem.quantity }}</td>
       </tr>
       <tr>
         <td>Total</td>
@@ -33,31 +35,48 @@
       </tr>
     </table>
   </div>
-  <div class="container customer">
+  <div class="container customer p-3">
     <h5>Customer</h5>
     <input
       type="text"
-      class="form-control w-50"
+      class="form-control w-75"
       name="search-customer"
       id="search-customer"
       placeholder="Customer number..."
       #customerMobile
     />
-    <a
+    <button
       (click)="onSearchCustomer(customerMobile)"
-      class="btn btn-outline-secondary mt-2"
-      >Search</a
-    >
+      class="btn btn-outline-secondary mt-2 search-button"
+      >Search</button>
+    <a class="btn btn-outline-success text-success mt-2 ml-2 place-order-button" (click)="onPlaceOrder()">Place Order</a>
+    <i *ngIf="loading" class="fa fa-spinner fa-spin mt-2 ml-2"></i>
+    <div>
+      <p class="alert alert-secondary w-75 mt-3" *ngIf="!attachedCustomer">
+        No attached customer
+      </p>
+      <p class="alert alert-success w-75 mt-3" *ngIf="attachedCustomer">
+        {{ attachedCustomer.name }} - {{ attachedCustomer.mobile }}
+      </p>
+    </div>
   </div>
 </div>
 <div *ngIf="searchCustomerResult.length" class="customer-search-modal">
   <h3 class="text-light">Customers</h3>
   <ul class="list-group">
-    <div *ngFor="let customer of searchCustomerResult" class="d-flex justify-content-between align-items-center list-group-item">
+    <div
+      *ngFor="let customer of searchCustomerResult"
+      class="d-flex justify-content-between align-items-center list-group-item"
+    >
       <li style="list-style: none;">
         {{ customer.name }}
       </li>
-      <a href="#" class="btn btn-outline-secondary btn-sm">Attach</a>
+      <button
+        (click)="onAttachCustomer(customer)"
+        class="btn btn-outline-secondary btn-sm"
+      >
+        Attach
+      </button>
     </div>
   </ul>
 </div>

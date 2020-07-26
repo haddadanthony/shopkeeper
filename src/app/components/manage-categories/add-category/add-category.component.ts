@@ -13,8 +13,9 @@ export class AddCategoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onAddCategory(e, name: HTMLInputElement) {
+  onAddCategory(e: Event, name: HTMLInputElement) {
     e.preventDefault();
     this.ctgService.addCategory(name.value);
+    name.value = '';
   }
 }

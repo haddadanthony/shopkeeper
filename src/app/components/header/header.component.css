@@ -7,9 +7,12 @@ nav {
     flex: 0 1 auto;
 }
 
-nav > h1 {
+nav > .hero {
     grid-column: 1/4;
     font-size: 1.8em;
+    font-family: 'Arvo';
+    cursor: pointer;
+    color: #444444;
 }
 
 a {

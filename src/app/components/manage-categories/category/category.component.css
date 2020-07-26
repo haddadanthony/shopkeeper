@@ -2,18 +2,11 @@ h3 {
     margin-bottom: 10px;
 }
 
-.wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background: linear-gradient(to right, #b63bd9, #fff);
-}
-
 p {
     text-transform: capitalize;
     color: #2a2a2a;
     font-weight: bold;
+    margin: 0;
 }
 
 .fa {

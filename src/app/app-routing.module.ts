@@ -9,6 +9,12 @@ import { EditCategoryComponent } from './components/manage-categories/edit-categ
 import { CategoryComponent } from './components/manage-categories/category/category.component';
 import { AddCategoryComponent } from './components/manage-categories/add-category/add-category.component';
 import { OrdersComponent } from './pages/orders/orders.component';
+import { CustomerComponent } from './components/customer/customer.component';
+import { CustomersListComponent } from './pages/customers/customers-list/customers-list.component';
+import { CreateCustomerComponent } from './pages/customers/create-customer/create-customer.component';
+import { EditCustomerComponent } from './pages/customers/edit-customer/edit-customer.component';
+import { CardItemComponent } from './components/items/card-item/card-item.component';
+import { AddItemComponent } from './components/items/add-item/add-item.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -16,7 +22,14 @@ const routes: Routes = [
     path: 'menu',
     component: MenuComponent,
     children: [
-      { path: 'items', component: ItemsComponent },
+      {
+        path: 'items',
+        component: ItemsComponent,
+        children: [
+          { path: '', component: CardItemComponent },
+          { path: 'add', component: AddItemComponent },
+        ],
+      },
       {
         path: 'categories',
         component: ManageCategoriesComponent,
@@ -28,7 +41,16 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'customers', component: CustomersComponent },
+  {
+    path: 'customers',
+    component: CustomersComponent,
+    children: [
+      { path: '', component: CustomersListComponent },
+      { path: 'create', component: CreateCustomerComponent },
+      { path: 'edit/:id', component: EditCustomerComponent },
+      { path: ':id', component: CustomerComponent },
+    ],
+  },
   { path: 'orders', component: OrdersComponent },
 ];
 

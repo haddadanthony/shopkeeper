@@ -28,4 +28,11 @@ export class CategoriesService {
     };
     this.categories.push(category);
   }
+
+  deleteCategory(id: number) {
+    this.categories = this.categories.filter(category => {
+      console.log(category.id, id);
+      return category.id !== id;
+    });
+  }
 }

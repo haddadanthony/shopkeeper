@@ -19,6 +19,12 @@ import { EditCategoryComponent } from './components/manage-categories/edit-categ
 import { CategoryComponent } from './components/manage-categories/category/category.component';
 import { AddCategoryComponent } from './components/manage-categories/add-category/add-category.component';
 import { CustomersService } from './services/customers.service';
+import { CustomerComponent } from './components/customer/customer.component';
+import { CustomersListComponent } from './pages/customers/customers-list/customers-list.component';
+import { CreateCustomerComponent } from './pages/customers/create-customer/create-customer.component';
+import { EditCustomerComponent } from './pages/customers/edit-customer/edit-customer.component';
+import { AddItemComponent } from './components/items/add-item/add-item.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -36,10 +42,16 @@ import { CustomersService } from './services/customers.service';
     EditCategoryComponent,
     CategoryComponent,
     AddCategoryComponent,
+    CustomerComponent,
+    CustomersListComponent,
+    CreateCustomerComponent,
+    EditCustomerComponent,
+    AddItemComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxChartsModule
   ],
   providers: [ItemsService, CategoriesService, CustomersService],
   bootstrap: [AppComponent]

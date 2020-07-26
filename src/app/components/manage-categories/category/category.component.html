@@ -1,8 +1,8 @@
 <h3>Category:</h3>
-<div class="wrapper">
+<div class="alert alert-success d-flex justify-content-between align-items-center">
     <p>{{category.name}}</p>
     <div>
-        <i class="fa fa-trash"></i>
+        <i class="fa fa-trash" (click)="deleteCategory()"></i>
         <i class="fa fa-edit" (click)="loadEditCategory()"></i>
     </div>
 </div>

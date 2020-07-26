@@ -1,6 +1,6 @@
 <div class="sidebar-customers-wrapper">
   <div class="sidebar">
-    <a href="#" class="add-customer">Add new customer</a>
+    <a routerLink="/customers/create" href="#" style="font-weight: bold;" class="add-customer" >Add new customer</a>
     <div class="search-filter">
       <p>Search By</p>
       <div class="phone-number">
@@ -41,18 +41,7 @@
     </div>
   </div>
 
-  <div class="customers">
-    <table>
-      <thead>
-        <th>Name</th>
-        <th>Last Name</th>
-        <th>Phone Number</th>
-      </thead>
-      <tr *ngFor="let customer of customers">
-         <td>{{ customer.name }}</td> 
-         <td>{{ customer.lastname }}</td>
-         <td>{{ customer.mobile }}</td>
-      </tr>
-    </table>
+  <div class="customers container">
+    <router-outlet></router-outlet>
   </div>
 </div>

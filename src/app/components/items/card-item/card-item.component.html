@@ -1,14 +1,24 @@
-<div class="card">
-  <header>{{ itemEl.name }}</header>
-  <p>{{itemEl.price | number}} LBP</p>
-  <h3>Ingredients</h3>
-  <ul>
-    <li *ngFor="let ingredient of itemEl.ingredients" class="ingredient">
-      {{ ingredient }}
-    </li>
-  </ul>
-  <div>
-    <i class="fa fa-trash"></i>
-    <i class="fa fa-edit"></i>
+<select
+  class="d-block ml-auto mr-4 btn btn-outline-secondary p-2"
+  name="categories"
+  (change)="filterItems()"
+  id="categories"
+  #category
+>
+<option *ngFor="let category of categories" [value]="category.name">{{category.name}}</option>
+</select>
+<div class="cards">
+  <div *ngFor="let itemEl of filteredItems" class="card-item">
+    <header>{{ itemEl.name }}</header>
+    <p>{{ itemEl.price | number }} LBP</p>
+    <ul>
+      <li *ngFor="let ingredient of itemEl.ingredients" class="ingredient">
+        {{ ingredient }}
+      </li>
+    </ul>
+    <div>
+      <i class="fa fa-trash"></i>
+      <i class="fa fa-edit"></i>
+    </div>
   </div>
 </div>

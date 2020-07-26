@@ -1,0 +1,31 @@
+<div class="container row mt-5">
+  <form (submit)="addItem($event, name, ingredients, price, category)" class="col-sm-8 m-auto">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" placeholder="Name" id="name" #name/>
+    </div>
+    <div class="form-group">
+      <label for="ingredients">Ingredients:<small style="color: #aaa">  (Comma seperated)</small></label>
+      <input
+        #ingredients
+        type="text"
+        class="form-control"
+        placeholder="Ingredients"
+        id="ingredients"
+      />
+    </div>
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="text" class="form-control" placeholder="Price" #price />
+    </div>
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <select class="form-control w-25" name="category" #category>
+        <option *ngFor="let category of categories" [value]="category.name">{{
+          category.name
+        }}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-outline-success">Submit</button>
+  </form>
+</div>

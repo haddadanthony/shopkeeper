@@ -8,6 +8,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent implements OnInit {
+  // categories: { id: number; name: string }[];
   category: { id: number; name: string };
   constructor(
     private ctgService: CategoriesService,
@@ -16,15 +17,18 @@ export class CategoryComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(
-      (params: Params) => {
-        this.category = this.ctgService.getCategory(+params.id);
-      }
-    )
+    this.route.params.subscribe((params: Params) => {
+      this.category = this.ctgService.getCategory(+params.id);
+    });
   }
 
   loadEditCategory() {
-    this.router.navigate(['edit'], {relativeTo: this.route});
+    this.router.navigate(['edit'], { relativeTo: this.route });
+  }
+
+  deleteCategory() {
+    console.log(this.category.id);
+    this.ctgService.deleteCategory(this.category.id);
+    this.router.navigate(['menu', 'categories']);
   }
 }
-

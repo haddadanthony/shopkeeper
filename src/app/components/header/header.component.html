@@ -1,8 +1,7 @@
 <nav>
-    <h1>ShopKeeper</h1>
+    <h1 routerLink="/" class="hero">ShopKeeper</h1>
     <a [ngClass]="href === '/' ? 'active' : ''" routerLink="/" routerLinkActive="{exact: true}">Dashboard</a>
-    <a [ngClass]="href.includes('menu') ? 'active' : ''" routerLink="/menu">Menu</a>
-    <a routerLink="/customers">Customers</a>
+    <a [ngClass]="href.includes('menu') ? 'active' : ''" [routerLink]="['menu', 'items']">Menu</a>
+    <a [ngClass]="href.includes('customers') ? 'active' : ''" routerLink="/customers">Customers</a>
     <a [ngClass]="href.includes('orders') ? 'active' : ''" routerLink="/orders">Orders</a>
-    <a href="#">Profile</a>
 </nav>

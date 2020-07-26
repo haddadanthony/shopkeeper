@@ -17,4 +17,9 @@ export class CustomersComponent implements OnInit {
     this.customers = this.Cs.getCustomers();
   }
 
+  addCustomer(e: Event) {
+    e.preventDefault();
+    this.Cs.addCustomer(this.customer, this.customers);
+  }
+
 }

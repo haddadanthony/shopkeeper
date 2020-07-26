@@ -19,6 +19,9 @@ export class OrdersComponent implements OnInit {
   customer = '';
   customers: Customer[];
   searchCustomerResult: Customer[] = [];
+  attachedCustomer: Customer;
+  orderPlaced = false;
+  loading = false;
 
   constructor(private cS: CategoriesService, private itemsService: ItemsService, private customersService: CustomersService) { }
 
@@ -31,7 +34,6 @@ export class OrdersComponent implements OnInit {
   onLoadCategory(e: Event, name: string) {
     e.preventDefault();
     this.categoryName = name;
-    console.log(this.categoryName);
   }
 
   onAddToCart(item: Item) {
@@ -45,8 +47,23 @@ export class OrdersComponent implements OnInit {
 
   onSearchCustomer(mobile: HTMLInputElement) {
     this.customersService.searchCustomer(mobile.value, this.customers, this.searchCustomerResult);
-    console.log(this.searchCustomerResult);
-    console.log(this.customers);
+  }
+
+  onAttachCustomer(customer: Customer) {
+    this.attachedCustomer = customer;
+    this.searchCustomerResult = [];
+  }
+
+  onPlaceOrder() {
+    this.loading = true;
+    setTimeout(() => {
+      this.orderPlaced = true;
+      this.loading = false;
+    }, 2000);
+    setTimeout(() => {
+      this.orderPlaced = false;
+      this.loading = false;
+    }, 5000);
   }
 
 }
