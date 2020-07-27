@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   unpaid: any[];
   multi: any[];
 
-  view: any[] = [600, 400];
+  view: any[] = [500, 400];
 
   // options
   showXAxis = true;
